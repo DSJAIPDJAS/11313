@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Real Estate | Premium Properties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+
+   <!-- شريط التنقل -->
+<nav class="navbar">
+    <div class="container">
+        <a href="#" class="logo">Elite<span>RealEstate</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#inv">Inv</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#clients">Clients</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="#" class="btn login-btn">Login</a>
+            <a href="#" class="btn register-btn">Register</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+        
+</nav>
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glowing-text">Discover Luxury Real Estate</h1>
+                <p class="animated-text">We offer the best investment opportunities in the market</p>
+                <div class="search-box">
+                    <input type="text" id="propertySearch" placeholder="Search by location, price, or type...">
+                    <button class="search-btn" id="searchButton"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            <div class="hero-image">
+                <div class="image-frame">
+                    <img src="https://images.squarespace-cdn.com/content/v1/614b8a3ca23b0a1609d011b0/1633600657482-RD46JYBH5UB94DFT8GFI/lofthouseresidences_hero_innovation2.jpg" alt="Luxury property" class="floating-image">
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down bounce"></i>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>About <span>Our Company</span></h2>
+                <p>Our success story and excellence in the real estate market</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Vision & Mission</h3>
+                    <p>At Elite Real Estate, we aim to provide integrated real estate solutions that meet all our valued clients' needs. With a team of experts and specialists, we guarantee you a unique experience in real estate investment.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="counter" data-target="150">0</div>
+                            <p>Successful Projects</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="counter" data-target="500">0</div>
+                            <p>Satisfied Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <div class="counter" data-target="20">0</div>
+                            <p>Awards & Honors</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-frame">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Our Company">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="inv" class="investments-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Investment <span>Opportunities</span></h2>
+                <p>Discover the best opportunities to grow your real estate portfolio</p>
+            </div>
+
+            <div class="investment-calculator">
+                <h3>Investment Return Calculator</h3>
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="investment-amount">Investment Amount (SAR)</label>
+                        <input type="range" id="investment-amount" min="500000" max="10000000" step="100000" value="2000000">
+                        <span id="amount-value">2,000,000 SAR</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="investment-period">Investment Period (Years)</label>
+                        <select id="investment-period">
+                            <option value="1">1 Year</option>
+                            <option value="3">3 Years</option>
+                            <option value="5">5 Years</option>
+                            <option value="10">10 Years</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="property-type">Property Type</label>
+                        <select id="property-type">
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="land">Land</option>
+                        </select>
+                    </div>
+                    <button id="calculate-btn" class="btn">Calculate Returns</button>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Expected Return</h4>
+                        <p id="expected-return">--</p>
+                    </div>
+                    <div class="result-card">
+                        <i class="fas fa-percentage"></i>
+                        <h4>Annual Return Rate</h4>
+                        <p id="annual-return">--</p>
+                    </div>
+                    <div class="result-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>ROI Period</h4>
+                        <p id="roi-period">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="investment-opportunities">
+                <h3>Featured Investment Opportunities</h3>
+                <div class="opportunities-grid">
+                    <div class="opportunity-card">
+                        <div class="opportunity-image">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Residential Investment">
+                            <div class="opportunity-badge">Most Popular</div>
+                        </div>
+                        <div class="opportunity-info">
+                            <h4>Sarawat Villas Compound</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Riyadh, Diplomatic Quarter</p>
+                            <div class="opportunity-meta">
+                                <span><i class="fas fa-tag"></i> 8.5% Annual Return</span>
+                                <span><i class="fas fa-calendar-alt"></i> 5 Years</span>
+                            </div>
+                            <button class="btn opportunity-btn">Investment Details</button>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <div class="opportunity-image">
+                            <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Commercial Investment">
+                            <div class="opportunity-badge">New</div>
+                        </div>
+                        <div class="opportunity-info">
+                            <h4>International Business Tower</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Jeddah, Palm Corniche</p>
+                            <div class="opportunity-meta">
+                                <span><i class="fas fa-tag"></i> 10.2% Annual Return</span>
+                                <span><i class="fas fa-calendar-alt"></i> 7 Years</span>
+                            </div>
+                            <button class="btn opportunity-btn">Investment Details</button>
+                        </div>
+                    </div>
+
+                    <div class="opportunity-card">
+                        <div class="opportunity-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Land Investment">
+                        </div>
+                        <div class="opportunity-info">
+                            <h4>Residential Investment Land</h4>
+                            <p><i class="fas fa-map-marker-alt"></i> Dammam, Aqeeq District</p>
+                            <div class="opportunity-meta">
+                                <span><i class="fas fa-tag"></i> 12.5% Annual Return</span>
+                                <span><i class="fas fa-calendar-alt"></i> 3 Years</span>
+                            </div>
+                            <button class="btn opportunity-btn">Investment Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest <span>Projects</span></h2>
+                <p>Explore our distinguished real estate projects</p>
+            </div>
+            <div id="projects-particles"></div>
+            <div class="projects-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Clients</span></h2>
+                <p>Trusted by leading companies worldwide</p>
+            </div>
+            <div class="clients-grid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span>Team</span></h2>
+                <p>Meet our professional team members</p>
+            </div>
+            <div id="particles-js-team"></div>
+            <div class="team-cards">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client <span>Testimonials</span></h2>
+                <p>What our clients say about our services</p>
+            </div>
+            <div class="testimonials-slider">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact <span>Us</span></h2>
+                <p>We're here to help with any inquiry</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Business Street, Riyadh, Saudi Arabia</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+966 12 345 6789</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@elite-realestate.com</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Elite Real Estate</h3>
+                    <p>A leading company in real estate and investment, providing innovative solutions that meet all our clients' needs.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Purchase</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Real Estate Consultancy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to receive updates on our offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Elite Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+  <!-- Login Modal -->
+<div class="auth-modal" id="loginModal">
+    <div class="auth-container">
+        <span class="close-modal">&times;</span>
+        <form id="loginForm" class="form">
+            <p id="heading">Login</p>
+            <div class="field">
+                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"></path>
+                </svg>
+                <input autocomplete="off" placeholder="Username or Email" id="loginUsername" class="input-field" type="text" required>
+            </div>
+            <div class="field">
+                <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+                </svg>
+                <input placeholder="Password" id="loginPassword" class="input-field" type="password" required>
+            </div>
+            <div class="btn">
+                <button type="submit" class="button1">&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;</button>
+                <button type="button" class="button2 show-register">Sign Up</button>
+            </div>
+            <button type="button" class="button3 forgot-password">Forgot Password?</button>
+        </form>
+    </div>
+</div>
+
+<!-- Register Modal -->
+<div class="auth-modal" id="registerModal">
+    <div class="auth-container">
+        <span class="close-modal">&times;</span>
+        <form id="registerForm" class="form">
+            <p id="heading">Create Account</p>
+            <div class="field">
+                <input placeholder="Full Name" id="regName" class="input-field" type="text" required>
+            </div>
+            <div class="field">
+                <input placeholder="Email" id="regEmail" class="input-field" type="email" required>
+            </div>
+            <div class="field">
+                <input placeholder="Phone Number" id="regPhone" class="input-field" type="tel" required>
+            </div>
+            <div class="field">
+                <input placeholder="Password" id="regPassword" class="input-field" type="password" required>
+            </div>
+            <div class="field">
+                <input placeholder="Confirm Password" id="regConfirmPassword" class="input-field" type="password" required>
+            </div>
+            <div class="form-group" style="color: #d3d3d3; font-size: 0.9em;">
+                <label>
+                    <input type="checkbox" required> I agree to the <a href="#" style="color: var(--secondary-color);">Terms & Conditions</a>
+                </label>
+            </div>
+            <div class="btn">
+                <button type="submit" class="button1">Sign Up</button>
+                <button type="button" class="button2 show-login">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div class="auth-modal" id="forgotModal">
+    <div class="auth-container">
+        <span class="close-modal">&times;</span>
+        <form id="forgotForm" class="form">
+            <p id="heading">Reset Password</p>
+            <div class="field">
+                <input placeholder="Email" id="forgotEmail" class="input-field" type="email" required>
+            </div>
+            <p style="color: #d3d3d3; text-align: center; margin: 1em 0;">We'll send you a password reset link to your email</p>
+            <div class="btn">
+                <button type="submit" class="button1">Send Link</button>
+                <button type="button" class="button2 show-login">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+    <!-- نافذة تفاصيل المشروع -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalProjectImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalProjectTitle"></h2>
+                    <p id="modalProjectDesc"></p>
+                    <div class="modal-meta">
+                        <p><i class="fas fa-tag"></i> <span id="modalProjectPrice"></span></p>
+                        <p><i class="fas fa-ruler-combined"></i> <span id="modalProjectArea"></span></p>
+                        <p><i class="fas fa-map-marker-alt"></i> <span id="modalProjectLocation"></span></p>
+                    </div>
+                    <button class="btn contact-btn">Contact Agent</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="main.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
